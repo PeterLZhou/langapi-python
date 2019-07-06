@@ -1,4 +1,4 @@
-{import json
+import json
 import re
 import itertools
 from typing import Union
@@ -13,8 +13,6 @@ class LangTranslateClient:
         self.public_key = public_key
         self.translations = json.loads(open(translations_file_path).read())
         self.targetLanguage = target_language
-
-        print(self.translations)
 
     def tr(self, phrase: Union[str, None], variables: dict = None, options: dict = None) -> Union[str, None]:
         variables = variables if variables is not None else {}
